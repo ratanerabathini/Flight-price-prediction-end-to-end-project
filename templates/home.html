@@ -1,36 +1,37 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Jun  7 13:45:43 2021
-
-@author: ratan
-"""
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <style>
+        body{
+        background-image:url({{url_for("static",filename="app1.jpg")}})
+        }
+    </style>    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flight Price Prediction</title>
+    
+
 </head>
 
 <body>
+    <br/>
 
-    <div style="color:black">
+    <div style="color: black">
         <form action="{{ url_for('predict')}}" method="post">
-            <h2>Flight Price </h2>
+            <h1>Flight Price </h1>
             <h3>Departure Date</h3>
             <input id="Dep_Time" name="Dep_Time" type="datetime-local"required="required">
             <h3>Arrival Date</h3>
             <input id="Arrival_Time" name="Arrival_Time" type="datetime-local"required="required">
-            <h5 class="card-title">Source</h5>
+            <h3 class="card-title">Source</h3>
             <select name="Source" id="Source" required="required">
                 <option value="Delhi">Delhi</option>
                 <option value="Kolkata">Kolkata</option>
                 <option value="Mumbai">Mumbai</option>
                 <option value="Chennai">Chennai</option>
             </select>
-            <h5 class="card-title">Destination</h5>
+            <h3 class="card-title">Destination</h3>
             <select name="Destination" id="Destination" required="required">
                 <option value="Cochin">Cochin</option>
                 <option value="Delhi">Delhi</option>
@@ -38,7 +39,7 @@ Created on Mon Jun  7 13:45:43 2021
                 <option value="Hyderabad">Hyderabad</option>
                 <option value="Kolkata">Kolkata</option>
             </select>
-            <h5 class="card-title">Stopage</h5>
+            <h3 class="card-title">Stopage</h3>
             <select name="stops" required="required">
                 <option value="0">Non-Stop</option>
                 <option value="1">1</option>
@@ -46,7 +47,7 @@ Created on Mon Jun  7 13:45:43 2021
                 <option value="3">3</option>
                 <option value="4">4</option>
             </select>
-            <h5 class="card-title">Which Airline you want to travel?</h5>
+            <h3 class="card-title">Which Airline you want to travel?</h3>
             <select name="airline" id="airline" required="required">
                 <option value="Jet Airways">Jet Airways</option>
                 <option value="IndiGo">IndiGo</option>
@@ -64,23 +65,20 @@ Created on Mon Jun  7 13:45:43 2021
             <br><br>
             <input type="submit" value="Submit" class="btn btn-secondary">  
         </form>
-
-
-
-        <br><br><h3>{{ prediction_text }}<h3>
+        <h3>{{ prediction_text }}<h3>
     </div>
 
 
 
 
     <style>
-        body {
-            background-color: white;
+        body{
+            
+            background-size: cover;
+            background-attachment: fixed;
             text-align: center;
             padding: 0px;
         }
-        
-       
     </style>
 </body>
 
